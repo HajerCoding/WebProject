@@ -1,0 +1,258 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+  color: #1f2937;
+  background-color: #f8fafc;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.bg-hero {
+  background-color: #1B3C53;
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+}
+
+img.rounded {
+  border-radius: 0.75rem;
+}
+
+.btn-primary {
+  background-color: #3C467B;
+  border-color: #3C467B;
+}
+
+.btn-primary:hover {
+  background-color: #2b3467;
+  border-color: #2b3467;
+}
+
+table.table {
+  border-color: #d1d5db;
+}
+
+table.table th,
+table.table td {
+  vertical-align: middle;
+}
+
+.navbar .nav-link {
+  padding-left: 0.85rem;
+  padding-right: 0.85rem;
+}
+
+.navbar-tabs {
+  background-color: #1B3C53;
+}
+
+.navbar-tabs .nav-tabs {
+  border: 0;
+}
+
+.navbar-tabs .nav-link {
+  color: #fff;
+  border: 0;
+}
+
+.navbar-tabs .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.navbar-tabs .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+h1 {
+  letter-spacing: 1px;
+}
+
+p.lead-text {
+  font-size: 1.1rem;
+}
+
+
+/* Generic class used by different tags */
+.accent {
+  font-size: xx-large;
+  font-weight: bold;
+  color: #703B3B;
+}
+
+
+
+
+/* ID selector */
+#hero-title {
+  text-transform: capitalize;
+}
+
+/* Universal selector */
+* {
+  box-sizing: border-box;
+  }
+  
+  
+  /* Contextual selector */
+  p span {
+    font-weight: bold;
+  }
+  
+  /* Pseudo-classes for links */
+  a:link {
+    color: #000000;
+  }
+  
+  a:visited {
+    color: #6610f2;
+  }
+  
+  a:hover {
+    color: #0acab7;
+  }
+  
+  a:active {
+    color: #0a49a7;
+  }
+  
+  .cc {
+    color: #198a44;
+  }
+  
+  
+  /*This for samira's work*/
+  .fixed-alert {
+    position: fixed;
+    bottom: 20px;
+    /* distance from bottom */
+    right: 20px;
+    /* distance from right */
+    z-index: 9999;
+    /* keeps it above everything */
+    width: 300px;
+  }
+  
+
+  
+  .form-control1:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  
+  #grade {
+    background-attachment: fixed;
+    background-color: #1f2937;
+    background-image: linear-gradient(to bottom, rgb(27, 61, 85)70%, rgb(144, 196, 233)100%);
+  }
+  
+  .form-control1 {
+    border-radius: 50px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 12px 20px;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  p.analytics {
+    font-size: 55px;
+    font-family: Georgia;
+    color: rgb(188, 227, 255);
+    text-align: center;
+    margin: 100px;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+
+  
+  img.imgS {
+    width: 7cm;
+    height: 4cm;
+    margin: 30px;
+  }
+  
+  .search-box {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .info {
+    color: rgb(4, 36, 58);
+  }
+  
+  .kpi {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #00796b;
+  }
+  
+  .chart-placeholder {
+    height: 300px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  .card1 {
+    border: 1px solid #e5e7eb;
+    margin-left: 50px;
+    border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    background-color: #d1d5db;
+  }
+  
+  .btn-custom {
+    background-color: #2e7d32;
+    color: #fff;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  
+  .btn-custom:hover {
+    background-color: #fdfdfd;
+  }
+  
+  .info-card {
+    border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .btn-custom {
+    background-color: #ffffff;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: 0.3s;
+  }
+  
+  .btn-custom2 {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: 0.3s;
+  }
+  
+  .collapse-content {
+    background-color: #f9fdf9;
+    border-radius: 15px;
+    padding: 15px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+
+
+
+
