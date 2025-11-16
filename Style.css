@@ -149,8 +149,7 @@ p.lead-text {
     border-radius: 50px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     padding: 12px 20px;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease-out forwards;
+
   }
   
   p.analytics {
@@ -159,8 +158,6 @@ p.lead-text {
     color: rgb(188, 227, 255);
     text-align: center;
     margin: 100px;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease-out forwards;
   }
   
 
@@ -251,6 +248,7 @@ p.lead-text {
     font-size: 16px;
     line-height: 1.6;
   }
+
 
 
 
