@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+            crossorigin="anonymous"></script>
+</head>
+
+<body
+  style="
+    font-family:'Times New Roman', Times, serif;
+    color:#1f2937;
+    background-color:#f8fafc;
+    margin:0;
+    letter-spacing:1px;
+  ">
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1B3C53;">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo.png" alt="Logo" height="30" class="me-2 align-middle">
+        <span class="fw-bold align-middle">AIM</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About Us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="Farmer.html">Farmer</a></li>
+          <li class="nav-item"><a class="nav-link" href="Government.html">Government</a></li>
+          <li class="nav-item"><a class="nav-link" href="Company.html">Company</a></li>
+          <li class="nav-item"><a class="nav-link" href="Researcher.html">Researcher</a></li>
+          <li class="nav-item"><a class="nav-link" href="Analytics.html">Analytics</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact Us.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="questionnaire.html">Questionnaire</a></li>
+          <li class="nav-item"><a class="nav-link" href="funpage.html">Fun Page</a></li>
+          <li class="nav-item"><a class="nav-link" href="calculator.html">Calculate</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Questionnaire -->
+  <section class="py-5" style="background-color:#eef6f2;">
+    <div class="container">
+
+      <p class="mb-1 text-uppercase"
+         style="letter-spacing:2px; color:#198a44; font-weight:bold;">
+        Questionnaire
+      </p>
+
+      <h2 class="mb-3" style="font-size:xx-large; font-weight:bold; color:#703B3B;">
+        Water Usage Feedback 
+      </h2>
+
+      <p class="mb-4">
+        Help us improve the Agriculture Irrigation Monitoring System by answering a few questions
+        about your experience with water usage and the AIM website.
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card" style="border:1px solid #e5e7eb; background-color:#ffffff;">
+            <div class="card-body">
+              <h3 class="h5 mb-3" style="color:#198a44;">Your Feedback</h3>
+
+              <!-- Form -->
+              <form name="FeedbackForm"
+                    onsubmit="return validateQuestionnaire();"
+                    method="post">
+
+                <!-- Full name -->
+                <div class="mb-3">
+                  <label for="qName" class="form-label">Full Name</label>
+                  <input type="text" id="qName" name="qName"
+                         class="form-control"
+                         placeholder="Your full name">
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                  <label for="qEmail" class="form-label">Email</label>
+                  <input type="text" id="qEmail" name="qEmail"
+                         class="form-control"
+                         placeholder="you@example.com">
+                </div>
+                <!-- User type -->
+                <div class="mb-3">
+                  <label for="qType" class="form-label">You are</label>
+                  <select id="qType" name="qType" class="form-select">
+                    <option value="">Choose…</option>
+                    <option>Farmer</option>
+                    <option>Government</option>
+                    <option>Company</option>
+                    <option>Researcher</option>
+                    <option>Student</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <!-- Satisfaction -->
+                <div class="mb-3">
+                  <span class="form-label d-block mb-1">How satisfied are you with AIM?</span>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio"
+                           name="qSatisfaction" id="sat1" value="Very satisfied">
+                    <label class="form-check-label" for="sat1">Very satisfied</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio"
+                           name="qSatisfaction" id="sat2" value="Satisfied">
+                    <label class="form-check-label" for="sat2">Satisfied</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio"
+                           name="qSatisfaction" id="sat3" value="Neutral">
+                    <label class="form-check-label" for="sat3">Neutral</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio"
+                           name="qSatisfaction" id="sat4" value="Not satisfied">
+                    <label class="form-check-label" for="sat4">Not satisfied</label>
+                  </div>
+                </div>
+
+                <!-- Topics -->
+                <div class="mb-3">
+                  <span class="form-label d-block mb-1">Which topics are most useful to you?</span>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox"
+                           id="topic1" name="topics" value="Water saving tips">
+                    <label class="form-check-label" for="topic1">Water saving tips</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox"
+                           id="topic2" name="topics" value="Farm analytics">
+                    <label class="form-check-label" for="topic2">Farm analytics and reports</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox"
+                           id="topic3" name="topics" value="Government policies">
+                    <label class="form-check-label" for="topic3">Government water policies</label>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div class="mb-3">
+                  <label for="qMessage" class="form-label">How can we improve AIM for you?</label>
+                  <textarea id="qMessage" name="qMessage"
+                            class="form-control"
+                            rows="4"
+                            placeholder="Write your feedback here..."></textarea>
+                </div>
+
+                <!-- Agreement -->
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" id="qAgree" name="qAgree">
+                  <label class="form-check-label" for="qAgree">
+                    I agree that this feedback may be used to improve the AIM system.
+                  </label>
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex gap-2">
+                  <button type="submit" class="btn btn-primary"
+                          style="background-color:#3C467B; border-color:#3C467B;">
+                    Submit Feedback
+                  </button>
+                  <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white py-4" style="background-color:#1B3C53;">
+    <div class="container">
+      <p class="mb-0">@ 2025 AgriSense - All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Javascript validation -->
+  <script type="text/javascript">
+    function validateQuestionnaire() {
+      let form = document.forms["FeedbackForm"];
+
+      let nameField = form["qName"];
+      let emailField = form["qEmail"];
+      let messageField = form["qMessage"];
+
+      // 1) Validate Name (3–20 letters/spaces)
+      let nameValue = nameField.value.trim();
+
+      if (nameValue.search(/^[A-Za-z\s]{3,20}$/) === -1) {
+        alert("Please enter a valid name (3–20 letters).");
+        nameField.focus();
+        nameField.select();
+        return false;
+      }
+
+      // 2) Validate email
+      let emailValue = emailField.value.trim();
+
+      if (emailValue === "") {
+        alert("Please enter your email address.");
+        emailField.focus();
+        emailField.select();
+        return false;
+      }
+
+      if (emailValue.indexOf("@") < 0 || emailValue.indexOf(".") < 0) {
+        alert("Please enter a valid email address (must contain '@' and '.').");
+        emailField.focus();
+        emailField.select();
+        return false;
+      }
+
+      // 3) Validate message
+      let msgValue = messageField.value.trim();
+
+      if (msgValue.length < 10) {
+        alert("Please write at least 10 characters in the feedback message.");
+        messageField.focus();
+        messageField.select();
+        return false;
+      }
+
+      // Success
+      alert("Your feedback has been sent successfully!");
+      return true;
+    }
+  </script>
+
+</body>
+</html>
