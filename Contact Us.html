@@ -25,7 +25,9 @@
     background-size:cover;
     background-position:center;
   ">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1B3C53;">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1B3C53;">
     <div class="container">
       <a class="navbar-brand" href="index.html">
         <img src="logo.png" alt="Logo" height="30" class="me-2 align-middle">
@@ -55,7 +57,7 @@
     </div>
   </nav>
 
-  <!-- Contact content-->
+  <!-- Contact content -->
   <section class="py-5">
     <div class="container">
 
@@ -68,10 +70,9 @@
         Have a question or suggestion?<br>Send us a message and we'll get back to you.
       </p>
 
-      <!--Two columns-->
       <div class="row g-4 mt-3">
 
-        <!--Left-->
+        <!-- Left Column -->
         <div class="col-md-5">
           <div class="card mb-3 bg-light">
             <div class="card-body text-dark">
@@ -93,30 +94,33 @@
           </div>
         </div>
 
-        <!--Right-->
+        <!-- Right -->
         <div class="col-md-7">
           <div class="card bg-light">
             <div class="card-body text-dark">
               <h3 class="h5 mb-3" style="color:#198a44;">Send a Message</h3>
 
-              <form action="mailto:s145336@student.squ.edu.om" method="post" enctype="text/plain">
+              <form onsubmit="return validateContact();"
+                    action="mailto:s145336@student.squ.edu.om"
+                    method="post" enctype="text/plain">
+
                 <div class="row g-3">
 
                   <div class="col-md-6">
                     <label for="name" class="form-label">Full Name</label>
                     <input type="text" id="name" name="name" class="form-control"
-                           placeholder="Your name" required>
+                           placeholder="Your name">
                   </div>
 
                   <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" id="email" name="email" class="form-control"
-                           placeholder="you@example.com" required>
+                    <input type="text" id="email" name="email" class="form-control"
+                           placeholder="you@example.com">
                   </div>
 
                   <div class="col-md-6">
                     <label for="role" class="form-label">You are</label>
-                    <select id="role" name="role" class="form-select" required>
+                    <select id="role" name="role" class="form-select">
                       <option value="" selected disabled>Choose…</option>
                       <option>Farmer</option>
                       <option>Government</option>
@@ -129,18 +133,18 @@
                   <div class="col-md-6">
                     <label for="subject" class="form-label">Subject</label>
                     <input type="text" id="subject" name="subject"
-                           class="form-control" placeholder="Subject" required>
+                           class="form-control" placeholder="Subject">
                   </div>
 
                   <div class="col-12">
                     <label for="message" class="form-label">Message</label>
                     <textarea id="message" name="message" class="form-control"
-                              rows="5" placeholder="Write your message…" required></textarea>
+                              rows="5" placeholder="Write your message…"></textarea>
                   </div>
 
                   <div class="col-12">
                     <div class="form-check">
-                      <input class="form-check-input" name="agree" type="checkbox" id="agree" required>
+                      <input class="form-check-input" name="agree" type="checkbox" id="agree">
                       <label class="form-check-label" for="agree">
                         I agree to share this information for support purposes.
                       </label>
@@ -177,7 +181,71 @@
     </div>
   </footer>
 
+  <!-- JavaScript validation -->
+  <script type="text/javascript">
+    // validateContact()
+    // Validates the Contact Us form before submitting.
+    function validateContact() {
+
+      let nameField = document.getElementById("name");
+      let emailField = document.getElementById("email");
+      let subjectField = document.getElementById("subject");
+      let messageField = document.getElementById("message");
+      let agreeBox = document.getElementById("agree");
+
+      // Validate name
+      if (nameField.value.trim() === "") {
+        alert("Please enter your full name.");
+        nameField.focus();
+        nameField.select();
+        return false;
+      }
+
+      // Validate email
+      let emailValue = emailField.value.trim();
+
+      if (emailValue === "") {
+        alert("Please enter your email address.");
+        emailField.focus();
+        emailField.select();
+        return false;
+      }
+
+      if (emailValue.indexOf("@") === -1 || emailValue.indexOf(".") === -1) {
+        alert("Please enter a valid email address.");
+        emailField.focus();
+        emailField.select();
+        return false;
+      }
+
+      // Validate subject
+      if (subjectField.value.trim() === "") {
+        alert("Please enter a subject.");
+        subjectField.focus();
+        subjectField.select();
+        return false;
+      }
+
+      // Validate message
+      if (messageField.value.trim().length < 5) {
+        alert("Please write a longer message.");
+        messageField.focus();
+        messageField.select();
+        return false;
+      }
+
+      // Validate checkbox
+      if (!agreeBox.checked) {
+        alert("You must agree before sending.");
+        agreeBox.focus();
+        return false;
+      }
+
+      alert("Your message has been sent successfully!");
+      return true;
+    }
+
+  </script>
+
 </body>
 </html>
-
-
