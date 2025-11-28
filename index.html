@@ -13,9 +13,10 @@
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
             crossorigin="anonymous"></script>
 </head>
+
 <body class="bg-light"
       style="
-        font-family: 'Times New Roman', Times, serif;
+        font-family:'Times New Roman', Times, serif;
         color:#1f2937;
         background-color:#f8fafc;
         margin:0;
@@ -30,13 +31,10 @@
         <span class="fw-bold align-middle">AIM</span>
       </a>
 
-      <!-- For phones -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Links -->
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -58,15 +56,14 @@
   <section class="py-5 text-white" style="background-color:#1B3C53;">
     <div class="container">
       <div class="row align-items-center g-4">
+
         <div class="col-lg-7">
-          <h1 class="display-5 mb-3" style="text-transform:capitalize;">
-            Agriculture Irrigation Monitoring System
-          </h1>
+          <h1 class="display-5 mb-3">Agriculture Irrigation Monitoring System</h1>
 
           <p class="lead mb-4" style="font-size:1.4rem;">
             <strong>Empowering every drop</strong>,
-            <strong>helping farms grow smarter</strong>,
-            <strong>conserve water</strong> and
+            helping farms grow smarter,
+            conserve water and
             <span style="font-weight:bold; color:#a6e318;">build a sustainable future for Oman</span>
           </p>
 
@@ -75,27 +72,26 @@
         </div>
 
         <div class="col-lg-5 text-center">
-          <img src="first.jpg" class="img-fluid rounded" alt="Irrigation in an Omani farm">
+          <img id="galleryImage" src="first.jpg"
+               class="img-fluid rounded"
+               alt="Irrigation in an Omani farm"
+               style="width:420px; height:320px; object-fit:cover;">
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Key Features -->
   <section class="py-5">
     <div class="container">
       <h2 class="mb-4 fw-bold" style="color:#703B3B;">⛅ Key Features</h2>
 
-      <!-- Row 1 -->
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100" style="border:1px solid #e5e7eb;">
             <div class="card-body">
               <h3 class="h5" style="color:#198a44;">Water Usage Tracking</h3>
-              <p class="mb-0">
-                Keep track of how much water each farm uses daily or weekly.
-                Farmers can easily view usage history and detect waste early.
-              </p>
+              <p>Keep track of water usage and detect waste early.</p>
             </div>
           </div>
         </div>
@@ -104,10 +100,7 @@
           <div class="card h-100" style="border:1px solid #e5e7eb;">
             <div class="card-body">
               <h3 class="h5" style="color:#198a44;">Smart Insights Dashboard</h3>
-              <p class="mb-0">
-                View graphs and reports showing water consumption by region, farm,
-                or crop for data-based decisions.
-              </p>
+              <p>View reports showing consumption by region or crop.</p>
             </div>
           </div>
         </div>
@@ -116,49 +109,7 @@
           <div class="card h-100" style="border:1px solid #e5e7eb;">
             <div class="card-body">
               <h3 class="h5" style="color:#198a44;">Alerts for Overuse</h3>
-              <p class="mb-0">
-                Receive warnings when water use exceeds safe limits to reduce waste
-                and protect groundwater.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Row 2 -->
-      <div class="row g-4 mt-2">
-        <div class="col-md-4">
-          <div class="card h-100" style="border:1px solid #e5e7eb;">
-            <div class="card-body">
-              <h3 class="h5" style="color:#198a44;">Government Reports</h3>
-              <p class="mb-0">
-                Authorities can access summarized reports to monitor regional water
-                distribution and plan better strategies.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100" style="border:1px solid #e5e7eb;">
-            <div class="card-body">
-              <h3 class="h5" style="color:#198a44;">Research Data Access</h3>
-              <p class="mb-0">
-                Researchers can use secure, anonymized data to analyze water use,
-                crop patterns, and sustainability.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100" style="border:1px solid #e5e7eb;">
-            <div class="card-body">
-              <h3 class="h5" style="color:#198a44;">Sustainable Agriculture Support</h3>
-              <p class="mb-0">
-                Encourages smart irrigation to protect resources and align
-                with Oman Vision 2040 for sustainable growth.
-              </p>
+              <p>Receive warnings when water exceeds safe limits.</p>
             </div>
           </div>
         </div>
@@ -168,12 +119,88 @@
     </div>
   </section>
 
+  <!-- Scrolling Banner -->
+  <div class="py-2" style="background-color:#1B3C53;">
+    <div class="container">
+      <marquee id="welcomeBanner" class="text-white"
+               style="font-family:'Times New Roman', Times, serif;">
+      </marquee>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="text-white py-4" style="background-color:#1B3C53;">
     <div class="container">
       <p class="mb-0">@ 2025 AgriSense - All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Javascript -->
+  <script type="text/javascript">
+   function updateBanner() {
+
+  // 1) Create a Date object that contains the current local date & time
+  let now = new Date();
+
+  // 2) Extract the day (1–31)
+  let day = now.getDate();
+
+  // 3) Extract the month (0–11) → add +1 to make it (1–12)
+  let month = now.getMonth() + 1;
+
+  // 4) Extract the full year 
+  let year = now.getFullYear();
+
+  // 5) Add leading zeros for single-digit values 
+  if (day < 10) day = "0" + day;
+  if (month < 10) month = "0" + month;
+
+  // 6) Build the date in DD/MM/YYYY format manually
+  let currentDate = day + "/" + month + "/" + year;
+
+  // 7) Get the time in local format 
+  let currentTime = now.toLocaleTimeString();
+
+  // 8) Create a friendly message that will be displayed inside the banner
+  let msg ="🌱 AgriSense welcomes you! Growing a smarter and sustainable Oman together 💧 | Today is "
+  + currentDate + " | Time: " + currentTime;
+
+  // 9) Insert the message 
+  document.getElementById("welcomeBanner").textContent = msg;
+}
+
+// 10) Call the function once immediately when the page loads
+updateBanner();
+
+// 11) Update the banner every 1000 ms (1 second)
+setInterval(updateBanner, 1000);
+
+
+/*
+Image gallery — rotation every 3 seconds
+*/
+
+// 1) Array that stores the names of the gallery images
+let galleryImages = ["first.jpg", "second.jpg", "third.jpg"];
+
+// 2) Variable to track which image is currently shown
+let currentIndex = 0;
+
+// 3) Function that changes the displayed image
+function changeGalleryImage() {
+
+  // Move to the next image index
+  // If we reach the last image, go back to index 0
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+
+  // Get the <img> element by its ID and change its source
+  document.getElementById("galleryImage").src = galleryImages[currentIndex];
+}
+
+// 4) Call the function every 3000 ms (3 seconds)
+setInterval(changeGalleryImage, 3000);
+
+  </script>
 
 </body>
 </html>
