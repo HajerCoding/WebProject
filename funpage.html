@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Page - Water-Smart Farm Builder</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+</head>
+<body class="bg-light"
+    style="
+        font-family:'Times New Roman', Times, serif;
+        color:#1f2937;
+        background-color:#f8fafc;
+        margin:0;
+        letter-spacing:1px;
+      ">
+
+<!-- =======================================================
+                         NAVBAR
+======================================================= -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1B3C53; letter-spacing:0;">
+    <div class="container ">
+
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo.png" alt="Logo" height="30" class="me-2 ">
+        <span class="fw-bold ">AIM</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home |</a></li>
+          <li class="nav-item"><a class="nav-link" href="About Us.html">About Us |</a></li>
+          <li class="nav-item"><a class="nav-link" href="Farmer.html">Farmer |</a></li>
+          <li class="nav-item"><a class="nav-link" href="Government.html">Government |</a></li>
+          <li class="nav-item"><a class="nav-link" href="Company.html">Company |</a></li>
+          <li class="nav-item"><a class="nav-link" href="Researcher.html">Researcher |</a></li>
+          <li class="nav-item"><a class="nav-link" href="Analytics.html">Analytics |</a></li>
+          <li class="nav-item"><a class="nav-link" href="questionnaire.html">Questionnaire |</a></li>
+
+          <li class="nav-item"><a class="nav-link active" href="funpage.html">Fun Page |</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="calculator.html">Calculate |</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact Us.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<!-- =======================================================
+                        HERO SECTION
+======================================================= -->
+<section class="py-5 text-white" style="background-color:#1B3C53;">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <h1 class="display-5 fw-bold mb-3">Fun Page – Water-Smart Farm Builder 💧</h1>
+                <p class="lead mb-0">
+                    Build your virtual farm and play with water-saving choices. Then arrange a sentence
+                    about smart irrigation!
+                </p>
+            </div>
+            <div class="col-lg-5 text-center">
+                <i class="bi bi-droplet-half display-1 d-block mb-2"></i>
+                <p class="mb-0">
+                    Make smart decisions → Fill the water-efficiency tank 🌊
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =======================================================
+                      MAIN GAME CONTENT
+======================================================= -->
+<section class="py-5">
+    <div class="container">
+
+        <!-- =============================================
+             GAME 1: WATER-SMART FARM BUILDER
+        ============================================== -->
+        <div class="row g-4 mb-5">
+
+            <!-- LEFT SIDE: GAME CONTROLS -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm border-0">
+
+                    <!-- Farm image that grows/animates together with the water tank -->
+                    <div class="text-center mb-3">
+                        <img id="farm-image"
+                            src="farm-building.png"
+                            alt="Farm building"
+                            style="width: 100%; max-width: 350px; border-radius: 10px;
+                                    transform: scale(0.6);
+                                    transition: transform 0.2s linear;">
+                    </div>
+
+
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">
+                            <i class="bi bi-controller me-2"></i>Design Your Water-Smart Farm
+                        </h2>
+
+                        <p class="mb-4">
+                            Choose one option in each section. Then click
+                            <strong>Evaluate My Farm</strong> to see how efficiently you use water.
+                        </p>
+
+                        <!-- Irrigation Method -->
+                        <div class="mb-4">
+                            <h5 class="mb-2">
+                                <i class="bi bi-droplet me-2"></i>Irrigation Method
+                            </h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="irrigation"
+                                               id="irr-flood" value="flood">
+                                        <label class="form-check-label" for="irr-flood">
+                                            Flood irrigation (traditional)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="irrigation"
+                                               id="irr-sprinkler" value="sprinkler">
+                                        <label class="form-check-label" for="irr-sprinkler">
+                                            Sprinkler irrigation
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="irrigation"
+                                               id="irr-drip" value="drip">
+                                        <label class="form-check-label" for="irr-drip">
+                                            Drip irrigation (efficient)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Time of Irrigation -->
+                        <div class="mb-4">
+                            <h5 class="mb-2">
+                                <i class="bi bi-clock-history me-2"></i>Irrigation Time
+                            </h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="time"
+                                               id="time-midday" value="midday">
+                                        <label class="form-check-label" for="time-midday">
+                                            Midday (12–3 PM)
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="time"
+                                               id="time-morning" value="morning">
+                                        <label class="form-check-label" for="time-morning">
+                                            Early morning
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="time"
+                                               id="time-evening" value="evening">
+                                        <label class="form-check-label" for="time-evening">
+                                            Late afternoon / evening
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Crop Type -->
+                        <div class="mb-4">
+                            <h5 class="mb-2">
+                                <i class="bi bi-flower1 me-2"></i>Crop Type
+                            </h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="crop"
+                                               id="crop-thirsty" value="thirsty">
+                                        <label class="form-check-label" for="crop-thirsty">
+                                            High-water imported crop
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="crop"
+                                               id="crop-local" value="local">
+                                        <label class="form-check-label" for="crop-local">
+                                            Local drought-tolerant crop
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="crop"
+                                               id="crop-grass" value="grass">
+                                        <label class="form-check-label" for="crop-grass">
+                                            Decorative grass lawn
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex flex-wrap gap-2 mt-4">
+                            <button id="evaluate-btn" class="btn btn-primary">
+                                Evaluate My Farm
+                            </button>
+                            <button id="reset-btn" class="btn btn-outline-secondary">
+                                Reset Choices
+                            </button>
+                        </div>
+
+                        <!-- Feedback Area -->
+                        <div id="game-feedback" class="mt-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: SCORE + WATER METER + HELP -->
+            <div class="col-lg-4">
+
+                <!-- Score card -->
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body text-center">
+                        <h3 class="h5 mb-3">
+                            <i class="bi bi-trophy me-2"></i>Water-Efficiency Score
+                        </h3>
+                        <p class="display-5 mb-0" id="score-display">0</p>
+                        <p class="text-muted mb-0">out of 3 smart choices</p>
+                    </div>
+                </div>
+
+                <!-- Water Level Meter -->
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body">
+                        <h3 class="h6 mb-3 text-center">
+                            <i class="bi bi-droplet me-2"></i>Water-Saving Level
+                        </h3>
+                        <p class="small text-muted text-center mb-2">
+                            The tank fills up as your choices become more water-smart.
+                        </p>
+                        <div class="progress" style="height:32px;">
+                            <div id="water-progress"
+                                 class="progress-bar bg-info progress-bar-striped progress-bar-animated"
+                                 role="progressbar"
+                                 style="width: 0%;"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 aria-valuenow="0">
+                                0%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to play -->
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h3 class="h6 mb-3"><i class="bi bi-info-circle me-2"></i>How to Play</h3>
+                        <ul class="mb-0">
+                            <li>Choose one option in each category.</li>
+                            <li>Click <strong>Evaluate My Farm</strong>.</li>
+                            <li>Read the feedback and try to reach 3/3 smart choices.</li>
+                            <li>Use <strong>Reset Choices</strong> to try a new combination.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- =============================================
+             GAME 2: BUILD THE WATER-SAVING SENTENCE
+        ============================================== -->
+        <hr class="my-4">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h2 class="h5 mb-3">
+                            <i class="bi bi-chat-text me-2"></i>Mini Game 2 – Build the Water-Saving Sentence
+                        </h2>
+                        <p class="mb-3">
+                            Click the words in the correct order to build a sentence about smart irrigation.
+                        </p>
+
+                        <div class="mb-2 fw-semibold">Available words:</div>
+                        <div id="sentence-words" class="d-flex flex-wrap gap-2 mb-3">
+                            <!-- JS will insert word buttons here -->
+                        </div>
+
+                        <div class="mb-2 fw-semibold">Your sentence:</div>
+                        <div id="sentence-result" class="border rounded bg-light p-2 mb-3" style="min-height: 48px;">
+                            <!-- JS will show selected words here -->
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <button id="sentence-check-btn" class="btn btn-primary" type="button">
+                                Check Sentence
+                            </button>
+                            <button id="sentence-reset-btn" class="btn btn-outline-secondary" type="button">
+                                Reset Words
+                            </button>
+                        </div>
+
+                        <div id="sentence-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =======================================================
+                            FOOTER
+======================================================= -->
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+        <p class="mb-0">&copy; 2025 AgriSense – Fun Page for Sustainable Agriculture.</p>
+    </div>
+</footer>
+
+<!-- =======================================================
+                     JAVASCRIPT GAME LOGIC
+======================================================= -->
+<script>
+    // -------------------------------------------------------
+    // GAME 1: WATER-SMART FARM BUILDER
+    // -------------------------------------------------------
+
+    // Scoring rules for each choice (0 = poor, 1 = medium, 2 = very water-smart)
+    const irrigationScores = {
+        "flood": 0,
+        "sprinkler": 1,
+        "drip": 2
+    };
+
+    const timeScores = {
+        "midday": 0,
+        "morning": 2,
+        "evening": 2
+    };
+
+    const cropScores = {
+        "thirsty": 0,
+        "local": 2,
+        "grass": 1
+    };
+
+    // Max possible points from raw scores (2+2+2 = 6)
+    const maxRawScore = 6;
+
+    // Helper: get selected value from a radio group
+    function getSelectedValue(groupName) {
+        const radios = document.querySelectorAll('input[name="' + groupName + '"]');
+        for (let r of radios) {
+            if (r.checked) {
+                return r.value;
+            }
+        }
+        return null;
+    }
+
+    // Evaluate farm choices
+    function evaluateFarm() {
+        const irrigation = getSelectedValue("irrigation");
+        const time = getSelectedValue("time");
+        const crop = getSelectedValue("crop");
+
+        const feedbackBox = document.getElementById("game-feedback");
+
+        if (!irrigation || !time || !crop) {
+            feedbackBox.innerHTML = `
+                <div class="alert alert-warning mt-2">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    Please choose one option in each section before evaluating your farm.
+                </div>
+            `;
+            return;
+        }
+
+        const irrigationScore = irrigationScores[irrigation] || 0;
+        const timeScore = timeScores[time] || 0;
+        const cropScore = cropScores[crop] || 0;
+
+        const totalRaw = irrigationScore + timeScore + cropScore;
+
+        // Convert raw score (0–6) to 0–3 for display
+        const normalizedScore = Math.round((totalRaw / maxRawScore) * 3);
+
+        document.getElementById("score-display").textContent = normalizedScore;
+
+        // Update water meter based on raw score 0–6 → 0–100%
+        const percent = Math.round((totalRaw / maxRawScore) * 100);
+        animateWaterMeterTo(percent);
+
+        let message = "";
+
+        if (normalizedScore === 3) {
+            message = `
+                <div class="alert alert-success mt-3">
+                    <i class="bi bi-check-circle me-2"></i>
+                    Excellent! Your farm is highly water-smart.
+                    You use efficient irrigation, irrigate at a good time, and grow climate-friendly crops.
+                </div>
+            `;
+        } else if (normalizedScore === 2) {
+            message = `
+                <div class="alert alert-info mt-3">
+                    <i class="bi bi-info-circle me-2"></i>
+                    Good job! Your farm uses water fairly well.
+                    Improve one more choice to reach the highest efficiency.
+                </div>
+            `;
+        } else if (normalizedScore === 1) {
+            message = `
+                <div class="alert alert-warning mt-3">
+                    <i class="bi bi-emoji-neutral me-2"></i>
+                    Your farm uses some water-saving ideas, but there is room to improve.
+                    Try drip irrigation or drought-tolerant crops.
+                </div>
+            `;
+        } else {
+            message = `
+                <div class="alert alert-danger mt-3">
+                    <i class="bi bi-emoji-frown me-2"></i>
+                    Your farm is very water-thirsty.
+                    Try drip irrigation, cooler irrigation times, and local crops to save water.
+                </div>
+            `;
+        }
+
+        feedbackBox.innerHTML = message;
+    }
+
+    // Reset Game 1
+    function resetFarm() {
+        document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+        document.getElementById("score-display").textContent = "0";
+        document.getElementById("game-feedback").innerHTML = "";
+        animateWaterMeterTo(0);
+    }
+
+    // Animate water meter (like filling water)
+    function animateWaterMeterTo(targetPercent) {
+        const bar = document.getElementById("water-progress");
+        if (!bar) return;
+
+        const currentPercent = parseInt(bar.getAttribute("aria-valuenow")) || 0;
+        if (currentPercent === targetPercent) return;
+
+        let current = currentPercent;
+        const step = currentPercent < targetPercent ? 1 : -1;
+
+        const interval = setInterval(() => {
+            current += step;
+            bar.style.width = current + "%";
+            bar.textContent = current + "%";
+            bar.setAttribute("aria-valuenow", current);
+            animateFarmImageTo(current);
+
+            // Change color when almost full
+            if (current >= 80) {
+                bar.classList.remove("bg-info");
+                bar.classList.add("bg-success");
+            } else {
+                bar.classList.remove("bg-success");
+                bar.classList.add("bg-info");
+            }
+
+            if ((step > 0 && current >= targetPercent) ||
+                (step < 0 && current <= targetPercent)) {
+                    // When water tank is full (100%), shake the farm image
+                    if (current === 100) {
+                    shakeFarmImage();}
+
+                clearInterval(interval);
+            }
+        }, 20);
+    }
+
+    // ===============================================================
+    // Animate the farm image to match the water tank filling animation
+    // - percent (0–100) controls how large the image becomes
+    // - As the user makes smarter irrigation choices, the farm "builds up"
+    //   visually by scaling up smoothly
+    // ===============================================================
+    function animateFarmImageTo(percent) {
+        const img = document.getElementById("farm-image");
+        if (!img) return;
+
+        // Minimum and maximum size of the image
+        const minScale = 0.6;   // image size when score is 0%
+        const maxScale = 1.1;   // image size when score is 100%
+
+        // Convert percent (0–100) into scale value between minScale → maxScale
+        const scale = minScale + (percent / 100) * (maxScale - minScale);
+
+        // Apply new scaled size
+        img.style.transform = `scale(${scale})`;
+    }
+
+    // ===============================================================
+    // Shake animation for the farm image when water tank reaches 100%
+    // ===============================================================
+    function shakeFarmImage() {
+        const img = document.getElementById("farm-image");
+        if (!img) return;
+
+        // Add shaking using inline CSS keyframes
+        img.style.animation = "shakeFarm 0.5s ease-in-out";
+
+        // Remove animation after it finishes so it can replay again
+        setTimeout(() => {
+            img.style.animation = "";
+        }, 600);
+    }
+
+    // Inline keyframes (added dynamically)
+    const styleElement = document.createElement("style");
+    styleElement.textContent = `
+    @keyframes shakeFarm {
+        0%   { transform: translate(0, 0) scale(1.1); }
+        20%  { transform: translate(-4px, -2px) scale(1.1); }
+        40%  { transform: translate(4px, 2px) scale(1.1); }
+        60%  { transform: translate(-4px, 2px) scale(1.1); }
+        80%  { transform: translate(4px, -2px) scale(1.1); }
+        100% { transform: translate(0, 0) scale(1.1); }
+    }
+    `;
+    document.head.appendChild(styleElement);
+
+
+    // -------------------------------------------------------
+    // GAME 2: BUILD THE WATER-SAVING SENTENCE
+    // -------------------------------------------------------
+
+    const correctSentence = ["Smart", "irrigation", "in", "Oman", "saves", "water"];
+    let availableWords = [];
+    let selectedWords = [];
+
+    // Shuffle helper
+    function shuffleArray(array) {
+        const arr = array.slice();
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+
+    // Render sentence game UI
+    function renderSentenceGame() {
+        availableWords = shuffleArray(correctSentence);
+        selectedWords = [];
+        updateSentenceUI();
+    }
+
+    // Update the words area + selected sentence area
+    function updateSentenceUI() {
+        const wordsContainer = document.getElementById("sentence-words");
+        const resultContainer = document.getElementById("sentence-result");
+        const feedback = document.getElementById("sentence-feedback");
+
+        wordsContainer.innerHTML = "";
+        feedback.innerHTML = "";
+        resultContainer.textContent = selectedWords.join(" ");
+
+        availableWords.forEach((word, index) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "btn btn-outline-secondary btn-sm";
+            btn.textContent = word;
+            btn.addEventListener("click", function () {
+                selectSentenceWord(index);
+            });
+            wordsContainer.appendChild(btn);
+        });
+    }
+
+    // When the user clicks a word button
+    function selectSentenceWord(index) {
+        selectedWords.push(availableWords[index]);
+        availableWords.splice(index, 1);
+        updateSentenceUI();
+    }
+
+    // Check the built sentence
+    function checkSentence() {
+        const feedback = document.getElementById("sentence-feedback");
+
+        if (selectedWords.length === 0) {
+            feedback.innerHTML = `
+                <div class="alert alert-warning mt-2">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    Start by clicking the words to build your sentence.
+                </div>
+            `;
+            return;
+        }
+
+        const userSentence = selectedWords.join(" ");
+        const correct = correctSentence.join(" ");
+
+        if (userSentence === correct) {
+            feedback.innerHTML = `
+                <div class="alert alert-success mt-2">
+                    <i class="bi bi-check-circle me-2"></i>
+                    Excellent! "${userSentence}" nicely describes the AIM goal of saving water in Omani farms.
+                </div>`;}
+        else {
+            feedback.innerHTML = `
+                <div class="alert alert-danger mt-2">
+                    <i class="bi bi-x-circle me-2"></i>
+                    Not quite. Your sentence is:
+                    "<strong>${userSentence}</strong>"<br>
+                    Try again or press <strong>Reset Words</strong> to reshuffle.
+                </div>
+            `;
+        }
+    }
+
+    // Reset sentence game
+    function resetSentenceGame() {
+        renderSentenceGame();
+        document.getElementById("sentence-feedback").innerHTML = "";
+    }
+
+    // -------------------------------------------------------
+    // INITIALIZATION
+    // -------------------------------------------------------
+    document.addEventListener("DOMContentLoaded", function () {
+        // Game 1
+        animateWaterMeterTo(0);
+        document.getElementById("evaluate-btn")
+            .addEventListener("click", evaluateFarm);
+        document.getElementById("reset-btn")
+            .addEventListener("click", resetFarm);
+
+        // Game 2
+        renderSentenceGame();
+        document.getElementById("sentence-check-btn")
+            .addEventListener("click", checkSentence);
+        document.getElementById("sentence-reset-btn")
+            .addEventListener("click", resetSentenceGame);
+    });
+</script>
+
+</body>
+</html>
