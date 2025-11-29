@@ -102,7 +102,7 @@ p.lead-text {
     font-weight: bold;
   }
   
-  /* Pseudo-classes for links */
+  /* Pseudo-classes for links
   a:link {
     color: #000000;
   }
@@ -117,7 +117,7 @@ p.lead-text {
   
   a:active {
     color: #0a49a7;
-  }
+  }  */
   
   .cc {
     color: #198a44;
@@ -250,6 +250,7 @@ p.lead-text {
     font-size: 16px;
     line-height: 1.6;
   }
+
 
 
 
