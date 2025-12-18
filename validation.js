@@ -216,3 +216,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+function validateGovDB() {
+    var form = document.forms["GovDBForm"];
+    var region = form["region"].value.trim();
+    var jan = form["jan"].value;
+    var feb = form["feb"].value;
+    var mar = form["mar"].value;
+
+    if (region === "") {
+        alert("Please enter a region name.");
+        return false;
+    }
+    if (jan === "" || jan <= 0) {
+        alert("Please enter a positive value for January.");
+        return false;
+    }
+    // ... similar for feb and mar
+    return true;
+}
