@@ -1,13 +1,12 @@
 <?php
-// process_questionnaire.php
 // This page receives the questionnaire form and saves it in the database,
 // then shows the saved values in a table.
 
-include "db_connect.php";  // from slides: include external PHP file
+include "db_connect.php"; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // 1. Read values from the form
+    //  Read values from the form
     $name         = "";
     $email        = "";
     $type         = "";
@@ -28,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $topics = implode(", ", $topics_arr);     // join topics into one string
 
-    // 2. Escape values for SQL (same style as slides)
+    // Escape values for SQL 
     $name_esc   = mysqli_real_escape_string($conn, $name);
     $email_esc  = mysqli_real_escape_string($conn, $email);
     $type_esc   = mysqli_real_escape_string($conn, $type);
@@ -36,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $topics_esc = mysqli_real_escape_string($conn, $topics);
     $msg_esc    = mysqli_real_escape_string($conn, $message);
 
-    // 3. INSERT statement
+    //  INSERT statement
     $sql = "INSERT INTO questionnaire_feedback
             (full_name, email, user_type, satisfaction, topics, message, agree)
             VALUES
@@ -48,11 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
              '$msg_esc',
              $agree)";
 
-    // 4. Execute INSERT
+    // Execute INSERT
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        // 5. Show a table with the saved values
+        //  Show a table with the saved values
         ?>
         <!DOCTYPE html>
         <html lang="en">

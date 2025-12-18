@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Contact Message Result</title>
 
-    <!-- Bootstrap from slides -->
+    <!-- Bootstrap  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
           rel="stylesheet">
 </head>
 <body style="font-family:'Times New Roman', Times, serif;">
 
-    <!-- Simple navbar ) -->
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1B3C53;">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
