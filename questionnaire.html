@@ -23,12 +23,13 @@
     letter-spacing:1px;
   ">
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1B3C53; letter-spacing:0;">
-    <div class="container ">
+    <div class="container">
 
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="logo.png" alt="Logo" height="30" class="me-2 ">
-        <span class="fw-bold ">AIM</span>
+        <img src="logo.png" alt="Logo" height="30" class="me-2">
+        <span class="fw-bold">AIM</span>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -47,13 +48,13 @@
           <li class="nav-item"><a class="nav-link active" href="questionnaire.html">Questionnaire |</a></li>
           <li class="nav-item"><a class="nav-link" href="funpage.html">Fun Page |</a></li>
           <li class="nav-item"><a class="nav-link" href="calculator.html">Calculate |</a></li>
-            <li class="nav-item"><a class="nav-link" href="Contact Us.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact Us.html">Contact Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Questionnaire -->
+  <!-- Questionnaire Section -->
   <section class="py-5" style="background-color:#eef6f2;">
     <div class="container">
 
@@ -77,27 +78,29 @@
             <div class="card-body">
               <h3 class="h5 mb-3" style="color:#198a44;">Your Feedback</h3>
 
-              <!-- Form -->
-              <form name="FeedbackForm"
-                    onsubmit="return validateQuestionnaire();"
-                    method="post">
+              <!-- Form starts here -->
+              <form name="FeedbackForm" 
+                    action="process_questionnaire.php"
+                    method="post"
+                    onsubmit="return validateQuestionnaire();">
 
-                <!-- Full name -->
+                <!-- Full Name -->
                 <div class="mb-3">
                   <label for="qName" class="form-label">Full Name</label>
                   <input type="text" id="qName" name="qName"
-                         class="form-control"
+                         class="form-control" required
                          placeholder="Your full name">
                 </div>
 
                 <!-- Email -->
                 <div class="mb-3">
                   <label for="qEmail" class="form-label">Email</label>
-                  <input type="text" id="qEmail" name="qEmail"
-                         class="form-control"
+                  <input type="email" id="qEmail" name="qEmail"
+                         class="form-control" required 
                          placeholder="you@example.com">
                 </div>
-                <!-- User type -->
+
+                <!-- User Type -->
                 <div class="mb-3">
                   <label for="qType" class="form-label">You are</label>
                   <select id="qType" name="qType" class="form-select">
@@ -114,21 +117,25 @@
                 <!-- Satisfaction -->
                 <div class="mb-3">
                   <span class="form-label d-block mb-1">How satisfied are you with AIM?</span>
+
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio"
                            name="qSatisfaction" id="sat1" value="Very satisfied">
                     <label class="form-check-label" for="sat1">Very satisfied</label>
                   </div>
+
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio"
                            name="qSatisfaction" id="sat2" value="Satisfied">
                     <label class="form-check-label" for="sat2">Satisfied</label>
                   </div>
+
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio"
                            name="qSatisfaction" id="sat3" value="Neutral">
                     <label class="form-check-label" for="sat3">Neutral</label>
                   </div>
+
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio"
                            name="qSatisfaction" id="sat4" value="Not satisfied">
@@ -139,21 +146,22 @@
                 <!-- Topics -->
                 <div class="mb-3">
                   <span class="form-label d-block mb-1">Which topics are most useful to you?</span>
+
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox"
-                           id="topic1" name="topics" value="Water saving tips">
+                           id="topic1" name="topics[]" value="Water saving tips">
                     <label class="form-check-label" for="topic1">Water saving tips</label>
                   </div>
 
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox"
-                           id="topic2" name="topics" value="Farm analytics">
+                           id="topic2" name="topics[]" value="Farm analytics">
                     <label class="form-check-label" for="topic2">Farm analytics and reports</label>
                   </div>
 
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox"
-                           id="topic3" name="topics" value="Government policies">
+                           id="topic3" name="topics[]" value="Government policies">
                     <label class="form-check-label" for="topic3">Government water policies</label>
                   </div>
                 </div>
@@ -164,7 +172,7 @@
                   <textarea id="qMessage" name="qMessage"
                             class="form-control"
                             rows="4"
-                            placeholder="Write your feedback here..."></textarea>
+                            placeholder="Write your feedback here..." required ></textarea>
                 </div>
 
                 <!-- Agreement -->
@@ -185,6 +193,8 @@
                 </div>
 
               </form>
+              <!-- Form ends here -->
+
             </div>
           </div>
         </div>
@@ -200,11 +210,8 @@
     </div>
   </footer>
 
-  <!-- Javascript validation -->
+  <!-- JavaScript Validation -->
   <script type="text/javascript">
-    // This function validates the feedback form before it is submitted
-    // It checks: full name, email, and feedback message length
-    // If a rule fails, it shows an alert and stops the form submission
     function validateQuestionnaire() {
       let form = document.forms["FeedbackForm"];
 
@@ -212,9 +219,8 @@
       let emailField = form["qEmail"];
       let messageField = form["qMessage"];
 
-      // 1) Validate Name (3–20 letters/spaces)
+      // Validate Name (3–20 letters)
       let nameValue = nameField.value.trim();
-
       if (nameValue.search(/^[A-Za-z\s]{3,20}$/) === -1) {
         alert("Please enter a valid name (3–20 letters).");
         nameField.focus();
@@ -222,9 +228,8 @@
         return false;
       }
 
-      // 2) Validate email
+      // Validate email
       let emailValue = emailField.value.trim();
-
       if (emailValue === "") {
         alert("Please enter your email address.");
         emailField.focus();
@@ -239,9 +244,8 @@
         return false;
       }
 
-      // 3) Validate message
+      // Validate message
       let msgValue = messageField.value.trim();
-
       if (msgValue.length < 10) {
         alert("Please write at least 10 characters in the feedback message.");
         messageField.focus();
@@ -250,14 +254,9 @@
       }
 
       // Success
-      alert("Your feedback has been sent successfully!");
       return true;
     }
   </script>
 
 </body>
 </html>
-
-
-
-
