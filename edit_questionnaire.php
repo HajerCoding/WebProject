@@ -2,13 +2,13 @@
 // edit_questionnaire.php
 // This page can search a feedback by email and then edit/update it.
 
-include "db_connect.php";  // from slides
+include "db_connect.php";  
 
 $message = "";
 $row     = null;
-$step    = "search";       // search | edit | done
+$step    = "search";      
 
-/* ---------- CASE 1: user came from "Edit Your Feedback" button (GET) ---------- */
+/* user came from "Edit Your Feedback" button (GET)  */
 if (isset($_GET["email"])) {
     $email_search = mysqli_real_escape_string($conn, $_GET["email"]);
 
@@ -28,10 +28,10 @@ if (isset($_GET["email"])) {
     }
 }
 
-/* ---------- CASE 2: user submitted one of the forms (POST) ---------- */
+/* user submitted one of the forms (POST) */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    /* ===== STEP 1: SEARCH BY EMAIL ===== */
+    /*  search by email */
     if (isset($_POST["find"])) {
 
         $email_search = "";
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
-    /* ===== STEP 2: SAVE CHANGES (UPDATE) ===== */
+    /*  save changes (UPDATE)  */
     } elseif (isset($_POST["save"])) {
 
         // Read edited values
@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             );
             $step = "edit";
         } else {
-            // Escape for SQL (same style as slides)
+            // Escape for SQL
             $id_esc           = mysqli_real_escape_string($conn, $id);
             $full_name_esc    = mysqli_real_escape_string($conn, $full_name);
             $email_esc        = mysqli_real_escape_string($conn, $email);
@@ -354,3 +354,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
+
