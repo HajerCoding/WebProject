@@ -2,7 +2,17 @@
 -- Create database
 CREATE DATABASE IF NOT EXISTS aim_db;
 USE aim_db;
-
+CREATE TABLE IF NOT EXISTS questionnaire_feedback (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    user_type VARCHAR(50),
+    satisfaction VARCHAR(50),
+    topics TEXT,
+    message TEXT,
+    agree TINYINT(1) DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 -- Table 1: farmers (represents Farmer data)
 CREATE TABLE IF NOT EXISTS farmers (
     id INT AUTO_INCREMENT PRIMARY KEY,
