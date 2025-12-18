@@ -38,8 +38,11 @@
         echo "<tr><th>Subject</th><td>$subject</td></tr>";
         echo "<tr><th>Message</th><td>$message</td></tr>";
         echo "</table>";
+        $sql = "INSERT INTO contact_messages (name, email, role, subject, message) 
+        VALUES ('$name', '$email', '$role', '$subject', '$message')";
+mysqli_query($conn, $sql);
       ?>
-
+    
       <a href="Contact Us.html" class="btn btn-secondary mt-3">Back to Contact Form</a>
     </div>
 
@@ -51,3 +54,4 @@
 
 </body>
 </html>
+
